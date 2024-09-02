@@ -14,7 +14,23 @@ module.exports = {
             use: ['babel-loader']
         },{
             test: /\.css$/,
-            use: ['style-loader', 'css-loader']
+            use: ['style-loader', 'css-loader', 'postcss-loader']
+        },{
+            test: /\.(png|jpe?g|gif|svg)$/i,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: 'images/[name].[ext]',
+                    outputPath: 'images',
+                    publicPath: 'images',
+                },
+                loader: 'url-loader',
+                options: {
+                    limit: 8192, // 8kb, arquivos menores que isso serão convertidos para base64
+                    name: '[name].[hash:7].[ext]', // nome do arquivo com hash para cache busting
+                    outputPath: 'images/', // diretório de saída para as imagens
+                },
+            }]
         }]
     },
     output: {

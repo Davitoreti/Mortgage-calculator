@@ -1,3 +1,5 @@
+import './style/index.css';
+
 let inputMortgageAmount = document.getElementById('mortgageAmount');
 let inputMortgageTerm = document.getElementById('mortgageTerm');
 let inputInterestRate = document.getElementById('interestRate');

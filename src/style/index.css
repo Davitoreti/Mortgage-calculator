@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-calculator-image {
+    background-image: url('../img/calculator.png');
+}
+
+.bg-illustration-image {
+    background-image: url('../img/illustration-empty.svg');
+}
