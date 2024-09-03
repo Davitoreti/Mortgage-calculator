@@ -14,7 +14,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader']
+                use: ['postcss-loader']
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
@@ -30,7 +30,6 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
