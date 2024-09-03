@@ -20,13 +20,8 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: 'asset',
                 generator: {
-                    filename: 'images/[name][hash:7][ext]'
+                    filename: 'images/[name][ext]'
                 },
-                parser: {
-                    dataUrlCondition: {
-                        maxSize: 15000 // 15kb
-                    }
-                }
             },
             {
                 test: /\.html$/,
@@ -37,12 +32,12 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html' 
         })
-    ]
+    ],
 };
