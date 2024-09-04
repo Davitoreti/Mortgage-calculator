@@ -4,7 +4,6 @@ const path = require('path');
 module.exports = {
     entry: {
         main: './src/index.js',
-        index: './src/index.html'
     },
     mode: 'production',
     module: {
@@ -16,9 +15,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['postcss-loader']
-            },{
-                test: /\.html$/,
-                use: ['html-loader']
             }
         ]
     },
