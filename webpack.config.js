@@ -15,15 +15,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['postcss-loader']
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset',
-                generator: {
-                    filename: 'images/[name][ext]'
-                },
-            },
-            {
+            },{
                 test: /\.html$/,
                 use: ['html-loader']
             }
@@ -31,7 +23,6 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({
