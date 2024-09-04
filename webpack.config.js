@@ -15,16 +15,13 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['postcss-loader']
+            },{
+                test: /\.html$/,
+                use: ['html-loader']
             }
         ]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: 'index.html' 
-        })
-    ],
 };
